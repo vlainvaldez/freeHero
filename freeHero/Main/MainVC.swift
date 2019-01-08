@@ -21,6 +21,8 @@ public final class MainVC: KioViewController {
         if let layout = self.rootView.collectionView.collectionViewLayout as? CustomCollectionViewLayout {
             layout.delegate = self
         }
+        
+        self.rootView.collectionView.delegate = self
 
     }
     
@@ -61,18 +63,25 @@ extension MainVC {
 //        )
 //
 //    }
+//
+//
 //}
 
+// MARK: - CustomCollectionViewLayoutDelegate Functions
 extension MainVC: CustomCollectionViewLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
         
         let number = Int.random(in: 200 ... 500)
         
         return CGFloat(number)
-        
     }
-    
-    
+}
+
+// MARK: - UICollectionViewDelegate Functions
+extension MainVC: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("INDEX \(indexPath.row)")
+    }
 }
 
 
