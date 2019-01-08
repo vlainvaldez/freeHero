@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06D157807E2695C5F990FB0D /* Pods_freeHeroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4418AFB9986A71984E175A /* Pods_freeHeroUITests.framework */; };
+		346E41FD2448A60B20B6E068 /* Pods_freeHeroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A3FEBAE2036CCA93D527D /* Pods_freeHeroTests.framework */; };
 		7C0383DD21E4E7C00093EE16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0383DC21E4E7C00093EE16 /* AppDelegate.swift */; };
-		7C0383DF21E4E7C00093EE16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0383DE21E4E7C00093EE16 /* ViewController.swift */; };
-		7C0383E221E4E7C00093EE16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0383E021E4E7C00093EE16 /* Main.storyboard */; };
+		7C0383DF21E4E7C00093EE16 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0383DE21E4E7C00093EE16 /* MainVC.swift */; };
 		7C0383E421E4E7C20093EE16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0383E321E4E7C20093EE16 /* Assets.xcassets */; };
 		7C0383E721E4E7C20093EE16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0383E521E4E7C20093EE16 /* LaunchScreen.storyboard */; };
 		7C0383F221E4E7C20093EE16 /* freeHeroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0383F121E4E7C20093EE16 /* freeHeroTests.swift */; };
 		7C0383FD21E4E7C20093EE16 /* freeHeroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0383FC21E4E7C20093EE16 /* freeHeroUITests.swift */; };
+		7C3D4EA521E4EC1700148419 /* FreeHeroAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EA421E4EC1700148419 /* FreeHeroAppCoordinator.swift */; };
+		7C3D4EA821E4EEAE00148419 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EA721E4EEAE00148419 /* MainCoordinator.swift */; };
+		7C3D4EAA21E4F15300148419 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EA921E4F15300148419 /* MainView.swift */; };
+		7C3D4EAC21E4F61500148419 /* MainDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EAB21E4F61500148419 /* MainDataSource.swift */; };
+		7C3D4EAE21E4F7CA00148419 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EAD21E4F7CA00148419 /* MainCell.swift */; };
+		BEE841D352A3E1D429D88E48 /* Pods_freeHero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CE64B553AE5EAF36D8BB35 /* Pods_freeHero.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		207AABB67FD30CF819AD5397 /* Pods-freeHeroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHeroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-freeHeroTests/Pods-freeHeroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		37CE64B553AE5EAF36D8BB35 /* Pods_freeHero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freeHero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C16B8C18A952CF594DA3BBD /* Pods-freeHeroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHeroUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-freeHeroUITests/Pods-freeHeroUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3D3A3FEBAE2036CCA93D527D /* Pods_freeHeroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freeHeroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68246113170E9FAD844DD5F6 /* Pods-freeHero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHero.release.xcconfig"; path = "Pods/Target Support Files/Pods-freeHero/Pods-freeHero.release.xcconfig"; sourceTree = "<group>"; };
+		6CF1B13DF1256E06274DE2FE /* Pods-freeHeroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHeroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-freeHeroUITests/Pods-freeHeroUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6F4418AFB9986A71984E175A /* Pods_freeHeroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freeHeroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0383D921E4E7C00093EE16 /* freeHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freeHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0383DC21E4E7C00093EE16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7C0383DE21E4E7C00093EE16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7C0383E121E4E7C00093EE16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7C0383DE21E4E7C00093EE16 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		7C0383E321E4E7C20093EE16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C0383E621E4E7C20093EE16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C0383E821E4E7C20093EE16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +60,13 @@
 		7C0383F821E4E7C20093EE16 /* freeHeroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = freeHeroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0383FC21E4E7C20093EE16 /* freeHeroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = freeHeroUITests.swift; sourceTree = "<group>"; };
 		7C0383FE21E4E7C20093EE16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C3D4EA421E4EC1700148419 /* FreeHeroAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeHeroAppCoordinator.swift; sourceTree = "<group>"; };
+		7C3D4EA721E4EEAE00148419 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		7C3D4EA921E4F15300148419 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7C3D4EAB21E4F61500148419 /* MainDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataSource.swift; sourceTree = "<group>"; };
+		7C3D4EAD21E4F7CA00148419 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		9A7AC530FB98D4D3E3920A04 /* Pods-freeHeroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHeroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-freeHeroTests/Pods-freeHeroTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB502797A635ECC4B29CC000 /* Pods-freeHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-freeHero/Pods-freeHero.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE841D352A3E1D429D88E48 /* Pods_freeHero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				346E41FD2448A60B20B6E068 /* Pods_freeHeroTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +90,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D157807E2695C5F990FB0D /* Pods_freeHeroUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		296521545BF347B402F1BB58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB502797A635ECC4B29CC000 /* Pods-freeHero.debug.xcconfig */,
+				68246113170E9FAD844DD5F6 /* Pods-freeHero.release.xcconfig */,
+				207AABB67FD30CF819AD5397 /* Pods-freeHeroTests.debug.xcconfig */,
+				9A7AC530FB98D4D3E3920A04 /* Pods-freeHeroTests.release.xcconfig */,
+				3C16B8C18A952CF594DA3BBD /* Pods-freeHeroUITests.debug.xcconfig */,
+				6CF1B13DF1256E06274DE2FE /* Pods-freeHeroUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		660080DD34E7792CE05A6E26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37CE64B553AE5EAF36D8BB35 /* Pods_freeHero.framework */,
+				3D3A3FEBAE2036CCA93D527D /* Pods_freeHeroTests.framework */,
+				6F4418AFB9986A71984E175A /* Pods_freeHeroUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7C0383D021E4E7C00093EE16 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +127,8 @@
 				7C0383F021E4E7C20093EE16 /* freeHeroTests */,
 				7C0383FB21E4E7C20093EE16 /* freeHeroUITests */,
 				7C0383DA21E4E7C00093EE16 /* Products */,
+				296521545BF347B402F1BB58 /* Pods */,
+				660080DD34E7792CE05A6E26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +145,9 @@
 		7C0383DB21E4E7C00093EE16 /* freeHero */ = {
 			isa = PBXGroup;
 			children = (
-				7C0383DC21E4E7C00093EE16 /* AppDelegate.swift */,
-				7C0383DE21E4E7C00093EE16 /* ViewController.swift */,
-				7C0383E021E4E7C00093EE16 /* Main.storyboard */,
-				7C0383E321E4E7C20093EE16 /* Assets.xcassets */,
-				7C0383E521E4E7C20093EE16 /* LaunchScreen.storyboard */,
-				7C0383E821E4E7C20093EE16 /* Info.plist */,
+				7C3D4EA621E4EE3100148419 /* Main */,
+				7C3D4EA321E4EB1800148419 /* AppControllers */,
+				7C03840A21E4E9E20093EE16 /* Supporting Files */,
 			);
 			path = freeHero;
 			sourceTree = "<group>";
@@ -125,6 +170,37 @@
 			path = freeHeroUITests;
 			sourceTree = "<group>";
 		};
+		7C03840A21E4E9E20093EE16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C0383E321E4E7C20093EE16 /* Assets.xcassets */,
+				7C0383E521E4E7C20093EE16 /* LaunchScreen.storyboard */,
+				7C0383E821E4E7C20093EE16 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7C3D4EA321E4EB1800148419 /* AppControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C0383DC21E4E7C00093EE16 /* AppDelegate.swift */,
+				7C3D4EA421E4EC1700148419 /* FreeHeroAppCoordinator.swift */,
+			);
+			path = AppControllers;
+			sourceTree = "<group>";
+		};
+		7C3D4EA621E4EE3100148419 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7C0383DE21E4E7C00093EE16 /* MainVC.swift */,
+				7C3D4EA721E4EEAE00148419 /* MainCoordinator.swift */,
+				7C3D4EA921E4F15300148419 /* MainView.swift */,
+				7C3D4EAB21E4F61500148419 /* MainDataSource.swift */,
+				7C3D4EAD21E4F7CA00148419 /* MainCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C03840121E4E7C20093EE16 /* Build configuration list for PBXNativeTarget "freeHero" */;
 			buildPhases = (
+				64CA4915E4F1C836BA545534 /* [CP] Check Pods Manifest.lock */,
 				7C0383D521E4E7C00093EE16 /* Sources */,
 				7C0383D621E4E7C00093EE16 /* Frameworks */,
 				7C0383D721E4E7C00093EE16 /* Resources */,
+				5D52E7BF15DA2CB228E0F46F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C03840421E4E7C20093EE16 /* Build configuration list for PBXNativeTarget "freeHeroTests" */;
 			buildPhases = (
+				8D6A0334D323FA8856742016 /* [CP] Check Pods Manifest.lock */,
 				7C0383E921E4E7C20093EE16 /* Sources */,
 				7C0383EA21E4E7C20093EE16 /* Frameworks */,
 				7C0383EB21E4E7C20093EE16 /* Resources */,
@@ -167,6 +246,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C03840721E4E7C20093EE16 /* Build configuration list for PBXNativeTarget "freeHeroUITests" */;
 			buildPhases = (
+				1CFAC2C8BB5C7B2EF156AD9F /* [CP] Check Pods Manifest.lock */,
 				7C0383F421E4E7C20093EE16 /* Sources */,
 				7C0383F521E4E7C20093EE16 /* Frameworks */,
 				7C0383F621E4E7C20093EE16 /* Resources */,
@@ -231,7 +311,6 @@
 			files = (
 				7C0383E721E4E7C20093EE16 /* LaunchScreen.storyboard in Resources */,
 				7C0383E421E4E7C20093EE16 /* Assets.xcassets in Resources */,
-				7C0383E221E4E7C00093EE16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +330,111 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CFAC2C8BB5C7B2EF156AD9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-freeHeroUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D52E7BF15DA2CB228E0F46F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-freeHero/Pods-freeHero-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kio/Kio.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-freeHero/Pods-freeHero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64CA4915E4F1C836BA545534 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-freeHero-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D6A0334D323FA8856742016 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-freeHeroTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7C0383D521E4E7C00093EE16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C0383DF21E4E7C00093EE16 /* ViewController.swift in Sources */,
+				7C0383DF21E4E7C00093EE16 /* MainVC.swift in Sources */,
+				7C3D4EAE21E4F7CA00148419 /* MainCell.swift in Sources */,
+				7C3D4EA821E4EEAE00148419 /* MainCoordinator.swift in Sources */,
 				7C0383DD21E4E7C00093EE16 /* AppDelegate.swift in Sources */,
+				7C3D4EAA21E4F15300148419 /* MainView.swift in Sources */,
+				7C3D4EA521E4EC1700148419 /* FreeHeroAppCoordinator.swift in Sources */,
+				7C3D4EAC21E4F61500148419 /* MainDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +470,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7C0383E021E4E7C00093EE16 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7C0383E121E4E7C00093EE16 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7C0383E521E4E7C20093EE16 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -430,11 +599,12 @@
 		};
 		7C03840221E4E7C20093EE16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB502797A635ECC4B29CC000 /* Pods-freeHero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S4MHP69HY;
-				INFOPLIST_FILE = freeHero/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/freeHero/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,11 +618,12 @@
 		};
 		7C03840321E4E7C20093EE16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68246113170E9FAD844DD5F6 /* Pods-freeHero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3S4MHP69HY;
-				INFOPLIST_FILE = freeHero/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/freeHero/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +637,7 @@
 		};
 		7C03840521E4E7C20093EE16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 207AABB67FD30CF819AD5397 /* Pods-freeHeroTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +659,7 @@
 		};
 		7C03840621E4E7C20093EE16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A7AC530FB98D4D3E3920A04 /* Pods-freeHeroTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +681,7 @@
 		};
 		7C03840821E4E7C20093EE16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C16B8C18A952CF594DA3BBD /* Pods-freeHeroUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +702,7 @@
 		};
 		7C03840921E4E7C20093EE16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CF1B13DF1256E06274DE2FE /* Pods-freeHeroUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

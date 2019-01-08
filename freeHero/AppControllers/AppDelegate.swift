@@ -11,11 +11,18 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    public var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    
+    public lazy var appCoordinator: FreeHeroAppCoordinator = FreeHeroAppCoordinator(
+        window: self.window!,
+        rootViewController: UINavigationController()
+    )
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.appCoordinator.start()
+        
         return true
     }
 
