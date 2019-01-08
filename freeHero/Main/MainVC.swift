@@ -15,8 +15,13 @@ public final class MainVC: KioViewController {
     public init() {
         super.init(nibName: nil, bundle: nil)
         
-        self.rootView.collectionView.delegate = self
+        
         self.dataSource = MainDataSource(collectionView: self.rootView.collectionView)
+        
+        if let layout = self.rootView.collectionView.collectionViewLayout as? CustomCollectionViewLayout {
+            layout.delegate = self
+        }
+
     }
     
     public required  init?(coder aDecoder: NSCoder) {
@@ -46,15 +51,28 @@ extension MainVC {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout Functions
-extension MainVC: UICollectionViewDelegateFlowLayout {
-    
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//extension MainVC: UICollectionViewDelegateFlowLayout {
+//
+//    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        return CGSize(
+//            width: (self.rootView.collectionView.frame.width - 30.0) / 2.0,
+//            height: (self.rootView.collectionView.frame.height - 30.0) / 4.0
+//        )
+//
+//    }
+//}
+
+extension MainVC: CustomCollectionViewLayoutDelegate {
+    func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
         
-        return CGSize(
-            width: (self.rootView.collectionView.frame.width - 30.0) / 2.0,
-            height: (self.rootView.collectionView.frame.height - 30.0) / 4.0
-        )
+        let number = Int.random(in: 200 ... 500)
+        
+        return CGFloat(number)
         
     }
+    
+    
 }
+
 
