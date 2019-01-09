@@ -16,6 +16,7 @@ public final class MainView: KioView {
     public let collectionView: UICollectionView = {
         let layout: CustomCollectionViewLayout = CustomCollectionViewLayout()
         layout.numberOfColumns = 2
+        
         let view: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         view.backgroundColor = UIColor(patternImage: UIImage(named: "repeatingBackground")!)
         return view

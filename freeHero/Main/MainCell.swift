@@ -15,7 +15,7 @@ public final class MainCell: UICollectionViewCell {
     
     
     // MARK: Subviews
-    public let imageView: UIImageView = {
+    public lazy var imageView: UIImageView = {
         let view: UIImageView = UIImageView()
         return view
     }()
@@ -55,16 +55,17 @@ extension MainCell {
         guard
             let thumbNailURL: URL = URL(string: imageString)
         else { return }
-
         
+        
+        self.imageView.kf.indicatorType = .activity
         self.imageView.kf.setImage(
             with: thumbNailURL,
             placeholder: UIImage(named: "Placeholder"),
             options: [
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(1)),
+                .cacheOriginalImage
             ])
-            
         {
             result in
             switch result {

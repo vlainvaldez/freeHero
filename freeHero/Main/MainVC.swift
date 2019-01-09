@@ -23,6 +23,7 @@ public final class MainVC: KioViewController {
         
         if let layout = self.rootView.collectionView.collectionViewLayout as? CustomCollectionViewLayout {
             layout.delegate = self
+            
         }
         
         self.rootView.collectionView.delegate = self
@@ -75,8 +76,6 @@ extension MainVC {
 extension MainVC: CustomCollectionViewLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
         
-        let number = Int.random(in: 200 ... 500)
-        
         let photographHeight: Int = self.photographs[indexPath.row].coverPhoto.height
         
         let calculatedHeightValue: Double = 0.07 * Double(photographHeight)
@@ -89,8 +88,10 @@ extension MainVC: CustomCollectionViewLayoutDelegate {
 extension MainVC: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("INDEX \(indexPath.row)")
+        
+        let title: String = self.photographs[indexPath.row].title
+        print("TITLE: \(title)")
     }
-    
     
 }
 
