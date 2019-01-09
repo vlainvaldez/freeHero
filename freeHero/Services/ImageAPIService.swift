@@ -15,9 +15,9 @@ public struct ImageAPIService {
     // MARK: - Store Properties
     private let photographProvider: MoyaProvider = MoyaProvider<PhotographRequest>()
     
-    public func getPhotograph(completion: @escaping ([Photograph]) -> Void ) {
+    public func getPhotograph(page: Int = 1, completion: @escaping ([Photograph]) -> Void ) {
         
-        self.photographProvider.request(PhotographRequest.getImages) { (result: Result<Response, MoyaError>) -> Void in
+        self.photographProvider.request(PhotographRequest.getImages(page: page) ) { (result: Result<Response, MoyaError>) -> Void in
             
             switch result {
             case .success(let response):

@@ -54,6 +54,7 @@ public final class MainVC: KioViewController {
     private let photographs: [Photograph]
     private let loadingQueue = OperationQueue()
     private var loadingOperations: [IndexPath: DataLoadOperation] = [:]
+    private var fetchMoreIsEnabled: Bool = false
 }
 
 // MARK: - Views
@@ -77,6 +78,22 @@ extension MainVC {
 //
 //
 //}
+
+// MARK: - ScrollViewDelegate Functions
+extension MainVC {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.contentSize.height {
+            if !self.fetchMoreIsEnabled {
+                print("FETCH")
+                self.fetchMoreIsEnabled = true
+            }
+        }
+    }
+}
 
 // MARK: - CustomCollectionViewLayoutDelegate Functions
 extension MainVC: CustomCollectionViewLayoutDelegate {

@@ -28,6 +28,9 @@ public final class FreeHeroAppCoordinator: AppCoordinator<UINavigationController
     public override func start() {
         
         self.imageAPIService.getPhotograph { (photographs: [Photograph]) -> Void in
+            
+            print("photographs counc \(photographs.count)")
+            
             let coordinator: MainCoordinator = MainCoordinator(
                 navigationController: self.rootViewController,
                 photographs: photographs

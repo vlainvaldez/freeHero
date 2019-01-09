@@ -63,7 +63,7 @@ extension MainCell {
             options: [
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(2)),
-                .waitForCache
+                .cacheOriginalImage
             ])
         {
             result in

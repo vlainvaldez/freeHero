@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 public enum PhotographRequest {
-    case getImages
+    case getImages(page: Int)
 }
 
 
@@ -21,7 +21,7 @@ extension PhotographRequest: TargetType {
     
     public var path: String {
         switch self {
-        case .getImages:
+        case .getImages(_):
             return "/collections"
         }
     }
@@ -39,16 +39,17 @@ extension PhotographRequest: TargetType {
     
     public var task: Task {
         switch self {
-        case .getImages:
+        case .getImages(let page):
                 return .requestParameters(
                     parameters: [
-                        "page": 1,
-                        "per_page": 10
+                        "page": page,
+                        "per_page": 20
                     ],
-                    encoding: JSONEncoding.default
+                    encoding: URLEncoding.queryString
                 )
         }
     }
+    
     
     public var headers: [String : String]? {
         return [
