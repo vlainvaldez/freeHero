@@ -9,12 +9,6 @@
 import Foundation
 import Kio
 
-enum LoadMoreStatus {
-    case loading
-    case finished
-    case haveMore
-}
-
 public final class MainDataSource: KioObject {
     
     // MARK: - Initializer
@@ -33,13 +27,14 @@ public final class MainDataSource: KioObject {
     }
     
     // MARK: - Stored Properties
-    private unowned let collectionView: UICollectionView
-    private var photographs: [Photograph]
+    public unowned let collectionView: UICollectionView
+    public var photographs: [Photograph]
     private var numberOfCells: Int
     private let imageAPIService: ImageAPIService = ImageAPIService()
     private var page: Int = 1
     
-    private var loadingStatus = LoadMoreStatus.haveMore
+//    private var loadingStatus = LoadMoreStatus.haveMore
+    
 }
 
 extension MainDataSource: UICollectionViewDataSource {
@@ -50,8 +45,7 @@ extension MainDataSource: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MainCell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCell.identifier, for: indexPath) as! MainCell
         
-//        cell.configure(with: self.photographs[indexPath.row])
-        
+        cell.configure(with: self.photographs[indexPath.row])
         
         return cell
     }

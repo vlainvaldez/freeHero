@@ -18,6 +18,7 @@ public final class MainCell: UICollectionViewCell {
     public lazy var imageView: UIImageView = {
         let view: UIImageView = UIImageView()
         view.clipsToBounds = true
+        view.image = UIImage(named: "Placeholder")
         return view
     }()
     
@@ -49,11 +50,14 @@ extension MainCell {
     
     public func configure(with photograph: Photograph) {
         
-        let imageString: String = photograph.coverPhoto.urls.full
+        let imageString: String = photograph.coverPhoto.urls.regular
         
         guard
             let thumbNailURL: URL = URL(string: imageString)
         else { return }
+        
+        
+//        self.imageView.loadeImagefrom(url: thumbNailURL)
         
         
         self.imageView.kf.indicatorType = .activity

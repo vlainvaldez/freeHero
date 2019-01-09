@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 extension CGFloat {
     static func random() -> CGFloat {
@@ -22,4 +23,35 @@ extension UIColor {
                        alpha: 1.0)
     }
 }
+
+let imageCache = NSCache<AnyObject, AnyObject>()
+
+//extension UIImageView {
+//    
+//    func loadeImagefrom(url: URL) {
+//        
+//        image = nil
+//        
+//        if let imageFromCache = imageCache.object(forKey: url as AnyObject) as? UIImage {
+//            self.image = imageFromCache
+//            return
+//        }
+//        
+//        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
+//            if error != nil {
+//                print(error!.localizedDescription)
+//                return
+//            }
+//            
+//            DispatchQueue.main.async {
+//                let cacheImage = UIImage(data: data!)
+//                
+//                imageCache.setObject(cacheImage!, forKey: url as AnyObject)
+//                self.image = cacheImage
+//            }
+//        }.resume()
+//        
+//    }
+//    
+//}
 

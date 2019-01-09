@@ -25,10 +25,10 @@ public final class MainVC: KioViewController {
             photographs: photographs
         )
         
-        if let layout = self.rootView.collectionView.collectionViewLayout as? CustomCollectionViewLayout {
-            layout.delegate = self
-            
-        }
+//        if let layout = self.rootView.collectionView.collectionViewLayout as? CustomCollectionViewLayout {
+//            layout.delegate = self
+//
+//        }
         
         self.rootView.collectionView.delegate = self
 
@@ -51,10 +51,12 @@ public final class MainVC: KioViewController {
     
     // MARK: - Stored Properties
     private var dataSource: MainDataSource!
-    private let photographs: [Photograph]
+    public var photographs: [Photograph]
     private let loadingQueue = OperationQueue()
     private var loadingOperations: [IndexPath: DataLoadOperation] = [:]
     private var fetchMoreIsEnabled: Bool = false
+    private let imageAPIService: ImageAPIService = ImageAPIService()
+    private var page: Int = 1
 }
 
 // MARK: - Views
@@ -65,19 +67,19 @@ extension MainVC {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout Functions
-//extension MainVC: UICollectionViewDelegateFlowLayout {
-//
-//    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        return CGSize(
-//            width: (self.rootView.collectionView.frame.width - 30.0) / 2.0,
-//            height: (self.rootView.collectionView.frame.height - 30.0) / 4.0
-//        )
-//
-//    }
-//
-//
-//}
+extension MainVC: UICollectionViewDelegateFlowLayout {
+
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(
+            width: (self.rootView.collectionView.frame.width - 30.0) / 2.0,
+            height: (self.rootView.collectionView.frame.height - 30.0) / 4.0
+        )
+
+    }
+
+
+}
 
 // MARK: - ScrollViewDelegate Functions
 extension MainVC {
@@ -88,24 +90,42 @@ extension MainVC {
         
         if offsetY > contentHeight - scrollView.contentSize.height {
             if !self.fetchMoreIsEnabled {
-                print("FETCH")
-                self.fetchMoreIsEnabled = true
+                
+                self.beginbatchFetch()
             }
         }
+    }
+    
+    public func beginbatchFetch() {
+        self.fetchMoreIsEnabled = true
+        
+        self.page += 1
+        
+        self.imageAPIService.getPhotograph(page: self.page) { [weak self] (photographs: [Photograph]) -> Void in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.dataSource.photographs.append(contentsOf: photographs)
+                
+                self.dataSource.collectionView.reloadData()
+                self.fetchMoreIsEnabled = false
+                
+            }
+        }
+        
     }
 }
 
 // MARK: - CustomCollectionViewLayoutDelegate Functions
-extension MainVC: CustomCollectionViewLayoutDelegate {
-    func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
-        
-        let photographHeight: Int = self.photographs[indexPath.row].coverPhoto.height
-        
-        let calculatedHeightValue: Double = 0.07 * Double(photographHeight)
-        
-        return CGFloat(calculatedHeightValue)
-    }
-}
+//extension MainVC: CustomCollectionViewLayoutDelegate {
+//    func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
+//
+//        let photographHeight: Int = self.photographs[indexPath.row].coverPhoto.height
+//
+//        let calculatedHeightValue: Double = 0.07 * Double(photographHeight)
+//
+//        return CGFloat(calculatedHeightValue)
+//    }
+//}
 
 // MARK: - UICollectionViewDelegate Functions
 extension MainVC: UICollectionViewDelegate {

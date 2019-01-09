@@ -53,8 +53,9 @@ public class CustomCollectionViewLayout: UICollectionViewLayout {
             var yOffset: [CGFloat] = [CGFloat](repeating: 0, count: self.numberOfColumns)
             
             var column: Int = 0
-            
+
             for item in 0 ..< collectionView!.numberOfItems(inSection: 0) {
+//            for item in 0 ..< collectionView!.numberOfItems(inSection: 0) {
                 let indexPath: IndexPath = IndexPath(item: item, section: 0)
                 let height = delegate.collectionView(
                     collectionView: collectionView!,

@@ -13,10 +13,21 @@ import SnapKit
 public final class MainView: KioView {
     
     // MARK: Subviews
+//    public let collectionView: UICollectionView = {
+//        let layout: CustomCollectionViewLayout = CustomCollectionViewLayout()
+//        layout.numberOfColumns = 2
+//
+//        let view: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+//        view.backgroundColor = UIColor(patternImage: UIImage(named: "repeatingBackground")!)
+//        return view
+//    }()
+    
     public let collectionView: UICollectionView = {
-        let layout: CustomCollectionViewLayout = CustomCollectionViewLayout()
-        layout.numberOfColumns = 2
-        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.scrollDirection = UICollectionView.ScrollDirection.vertical
+        layout.minimumLineSpacing = 10.0
+        layout.minimumInteritemSpacing = 10.0
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         let view: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         view.backgroundColor = UIColor(patternImage: UIImage(named: "repeatingBackground")!)
         return view
