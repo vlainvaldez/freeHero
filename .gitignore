@@ -81,4 +81,9 @@ build
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+### Project Specific ###
+PrivateConstants.swift
+
+
+
 # End of https://www.gitignore.io/api/xcode,swift
