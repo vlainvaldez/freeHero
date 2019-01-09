@@ -39,9 +39,11 @@ extension MainDataSource: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MainCell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCell.identifier, for: indexPath) as! MainCell
         
-        cell.configure(with: self.photographs[indexPath.row])
+//        cell.configure(with: self.photographs[indexPath.row])
         
         return cell
     }
     
 }
+
+

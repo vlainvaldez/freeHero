@@ -62,8 +62,8 @@ extension MainCell {
             placeholder: UIImage(named: "Placeholder"),
             options: [
                 .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
+                .transition(.fade(2)),
+                .waitForCache
             ])
         {
             result in

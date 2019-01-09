@@ -52,6 +52,8 @@ public final class MainVC: KioViewController {
     // MARK: - Stored Properties
     private var dataSource: MainDataSource!
     private let photographs: [Photograph]
+    private let loadingQueue = OperationQueue()
+    private var loadingOperations: [IndexPath: DataLoadOperation] = [:]
 }
 
 // MARK: - Views
@@ -97,6 +99,70 @@ extension MainVC: UICollectionViewDelegate {
         delegate.imageTapped(with: self.photographs[indexPath.row])
     }
     
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        guard let cell = cell as? MainCell else { return }
+        
+        let updateCellClosure: (Photograph?) -> Void = { [weak self] photograph in
+            guard let self = self else { return }
+            
+            cell.configure(with: photograph!)
+            
+            self.loadingOperations.removeValue(forKey: indexPath)
+        }
+        
+        if let dataLoader = loadingOperations[indexPath] {
+            if let photograph = dataLoader.photograph {
+                cell.configure(with: photograph)
+                loadingOperations.removeValue(forKey: indexPath)
+            } else {
+                dataLoader.loadingCompletionHandler = updateCellClosure
+            }
+        } else {
+            if let dataLoader = self.loadPhotograph(at: indexPath.item) {
+                dataLoader.loadingCompletionHandler = updateCellClosure
+                
+                loadingQueue.addOperation(dataLoader)
+                
+                loadingOperations[indexPath] = dataLoader
+            }
+        }
+    }
+    
+    func loadPhotograph(at index: Int) -> DataLoadOperation? {
+        if (0..<self.photographs.count).contains(index) {
+            return DataLoadOperation(self.photographs[index])
+        }
+        return .none
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        if let dataLoader = loadingOperations[indexPath] {
+            dataLoader.cancel()
+            loadingOperations.removeValue(forKey: indexPath)
+        }
+    }
+    
 }
 
-
+// MARK: - UICollectionViewDataSourcePrefetching Functions
+extension MainVC: UICollectionViewDataSourcePrefetching {
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               prefetchItemsAt indexPaths: [IndexPath]) {
+        
+        for indexPath in indexPaths {
+            
+            if let _ = loadingOperations[indexPath] {
+                continue
+            }
+            
+            if let dataLoader = self.loadPhotograph(at: indexPath.item) {
+                loadingQueue.addOperation(dataLoader)
+                loadingOperations[indexPath] = dataLoader
+            }
+        }
+        
+    }
+}
