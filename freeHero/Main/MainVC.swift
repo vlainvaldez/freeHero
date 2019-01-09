@@ -104,6 +104,8 @@ extension MainVC {
         self.imageAPIService.getPhotograph(page: self.page) { [weak self] (photographs: [Photograph]) -> Void in
             guard let self = self else { return }
             DispatchQueue.main.async {
+                
+                self.photographs.append(contentsOf: photographs)
                 self.dataSource.photographs.append(contentsOf: photographs)
                 
                 self.dataSource.collectionView.reloadData()
