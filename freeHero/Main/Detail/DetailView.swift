@@ -13,11 +13,21 @@ import SnapKit
 public final class DetailView: KioView {
     
     // MARK: - Subviews
-    public lazy var imageBanner: UIImageView = {
+    private lazy var imageBanner: UIImageView = {
         let view: UIImageView = UIImageView()
         view.image = UIImage(named: "repeatingBackground")
         view.clipsToBounds = true
         view.contentMode = UIImageView.ContentMode.scaleAspectFit
+        return view
+    }()
+    
+    private let descriptionTextView: UITextView = {
+        let view: UITextView = UITextView()
+        view.isEditable = false
+        view.isUserInteractionEnabled = false
+        view.backgroundColor = UIColor.clear
+        view.font = UIFont.boldSystemFont(ofSize: 20)
+        view.textColor = UIColor.white
         return view
     }()
     
@@ -29,8 +39,9 @@ public final class DetailView: KioView {
         self.backgroundColor = UIColor.blue
         
         self.kio.subviews(forAutoLayout: [
-            self.imageBanner
+            self.imageBanner, self.descriptionTextView
         ])
+        
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -46,6 +57,13 @@ public final class DetailView: KioView {
         self.imageBanner.snp.remakeConstraints { [unowned self] (make: ConstraintMaker) -> Void in
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo((self.frame.height / 2) - 30)
+        }
+        
+        self.descriptionTextView.snp.remakeConstraints { [unowned self] (make: ConstraintMaker) -> Void in
+            make.top.equalTo(self.imageBanner.snp.bottom).offset(20.0)
+            make.leading.equalToSuperview().offset(20.0)
+            make.trailing.equalToSuperview().inset(20.0)
+            make.height.equalTo(200.0)
         }
     }
     
@@ -76,6 +94,10 @@ public final class DetailView: KioView {
                 print("Job failed: \(error.localizedDescription)")
             }
         }
+        
+        print("DESC \(photograph.imageDescription)")
+        
+        self.descriptionTextView.text = photograph.imageDescription
     }
     
 }

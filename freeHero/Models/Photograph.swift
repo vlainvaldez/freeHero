@@ -45,7 +45,7 @@ public final class Photograph: NSObject, Decodable {
         if let photoDescription = try container.decode(String?.self, forKey: Photograph.CodingKeys.imageDescription) {
             self.imageDescription = photoDescription
         } else {
-            self.imageDescription = "No Description Found"
+            self.imageDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         }
         
         super.init()
