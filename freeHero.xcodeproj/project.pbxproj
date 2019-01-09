@@ -25,6 +25,7 @@
 		7C3D4EB721E57FF000148419 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB621E57FF000148419 /* ImageRequest.swift */; };
 		7C3D4EB921E5849000148419 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB821E5849000148419 /* PrivateConstants.swift */; };
 		7C3D4EBC21E5893800148419 /* ImageAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EBB21E5893800148419 /* ImageAPIService.swift */; };
+		7C3D4EC021E58F0C00148419 /* Photograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EBF21E58F0C00148419 /* Photograph.swift */; };
 		BEE841D352A3E1D429D88E48 /* Pods_freeHero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CE64B553AE5EAF36D8BB35 /* Pods_freeHero.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		7C3D4EB621E57FF000148419 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		7C3D4EB821E5849000148419 /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		7C3D4EBB21E5893800148419 /* ImageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIService.swift; sourceTree = "<group>"; };
+		7C3D4EBF21E58F0C00148419 /* Photograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photograph.swift; sourceTree = "<group>"; };
 		9A7AC530FB98D4D3E3920A04 /* Pods-freeHeroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHeroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-freeHeroTests/Pods-freeHeroTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB502797A635ECC4B29CC000 /* Pods-freeHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-freeHero/Pods-freeHero.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +157,7 @@
 		7C0383DB21E4E7C00093EE16 /* freeHero */ = {
 			isa = PBXGroup;
 			children = (
+				7C3D4EBD21E58DF900148419 /* Models */,
 				7C3D4EBA21E5879500148419 /* Networking */,
 				7C3D4EB521E57FA100148419 /* Services */,
 				7C3D4EAF21E4FE0500148419 /* Utilities */,
@@ -246,6 +249,14 @@
 				7C3D4EB621E57FF000148419 /* ImageRequest.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		7C3D4EBD21E58DF900148419 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C3D4EBF21E58F0C00148419 /* Photograph.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +502,7 @@
 				7C3D4EB721E57FF000148419 /* ImageRequest.swift in Sources */,
 				7C3D4EB921E5849000148419 /* PrivateConstants.swift in Sources */,
 				7C3D4EA521E4EC1700148419 /* FreeHeroAppCoordinator.swift in Sources */,
+				7C3D4EC021E58F0C00148419 /* Photograph.swift in Sources */,
 				7C3D4EB221E4FE2B00148419 /* CustomCollectionViewLayout.swift in Sources */,
 				7C3D4EAC21E4F61500148419 /* MainDataSource.swift in Sources */,
 			);

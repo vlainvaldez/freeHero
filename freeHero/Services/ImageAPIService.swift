@@ -22,11 +22,12 @@ public struct ImageAPIService {
             case .success(let response):
                 
                 guard
-                    let json = try? JSONSerialization.jsonObject(
-                        with: response.data,
-                        options: [])
+                    let photographs: [Photograph] = try? JSONDecoder().decode([Photograph].self, from: response.data)
                 else { return }
-                print(json)
+                
+                for photograph in photographs {
+                    print("title: \(photograph.title)")
+                }
                 
             case .failure(let error):
                 print(error)
