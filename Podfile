@@ -8,6 +8,7 @@ target 'freeHero' do
   # Pods for freeHero
   pod 'SnapKit', '~> 4.0.0'
   pod 'Kio', :git => 'https://github.com/hooliooo/Kio.git'
+  pod 'Moya', '~> 12.0'
 
   target 'freeHeroTests' do
     inherit! :search_paths

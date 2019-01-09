@@ -82,6 +82,8 @@ extension MainVC: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("INDEX \(indexPath.row)")
     }
+    
+    
 }
 
 
