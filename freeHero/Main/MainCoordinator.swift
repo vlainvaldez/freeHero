@@ -11,13 +11,13 @@ import Kio
 
 public final class MainCoordinator: AbstractCoordinator {
     
-    
     // MARK: - Initializer
     public init(navigationController: UINavigationController, photographs: [Photograph]) {
         self.navigationController = navigationController
         self.photographs = photographs
         super.init()
         
+        self.navigationController.delegate = self
     }
     
     // MARK: - Stored Properties
@@ -28,8 +28,43 @@ public final class MainCoordinator: AbstractCoordinator {
     // MARK: - Instance Methods
     public override func start() {
         
-        let vc: MainVC = MainVC(photographs: photographs)
+        let vc: MainVC = MainVC(
+            photographs: photographs,
+            delegate: self
+        )
+        
         self.navigationController.setViewControllers([vc], animated: true)
     }
     
+}
+
+extension MainCoordinator: MainVCDelegate {
+    
+    public func imageTapped(with photograph: Photograph) {
+        let coordinator: DetailCoordinator = DetailCoordinator(
+            navigationController: self.navigationController,
+            photograph: photograph
+        )
+        
+        coordinator.start()
+        self.add(childCoordinator: coordinator)        
+    }
+}
+
+
+extension MainCoordinator: UINavigationControllerDelegate {
+    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        guard
+            let fromViewController = navigationController.transitionCoordinator?.viewController(
+                forKey: UITransitionContextViewControllerKey.from
+            ),
+            !navigationController.viewControllers.contains(fromViewController),
+            fromViewController is DetailVC
+        else { return }
+        
+        guard let coordinator = self.childCoordinators.filter({ $0 is DetailCoordinator }).first
+            else { return }
+        
+        self.remove(childCoordinator: coordinator)
+    }
 }

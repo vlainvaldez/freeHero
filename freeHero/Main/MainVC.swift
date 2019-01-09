@@ -10,10 +10,14 @@ import UIKit
 import Kio
 
 public final class MainVC: KioViewController {
-        
+    
+    // MARK: - Delegate Properties
+    private weak var delegate: MainVCDelegate?
+    
     // MARK: - Initializer
-    public init(photographs: [Photograph]) {
+    public init(photographs: [Photograph], delegate: MainVCDelegate) {
         self.photographs = photographs
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
         
         self.dataSource = MainDataSource(
@@ -87,10 +91,10 @@ extension MainVC: CustomCollectionViewLayoutDelegate {
 // MARK: - UICollectionViewDelegate Functions
 extension MainVC: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("INDEX \(indexPath.row)")
         
-        let title: String = self.photographs[indexPath.row].title
-        print("TITLE: \(title)")
+        guard let delegate = self.delegate else { return }
+        
+        delegate.imageTapped(with: self.photographs[indexPath.row])
     }
     
 }
