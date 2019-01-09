@@ -23,3 +23,18 @@ extension UIColor {
     }
 }
 
+//extension UIImageView {
+//    public func imageFromUrl(urlString: String) {
+//        if let url = URL(string: urlString) {
+//            let request = URLRequest(url: url as URL)
+//            
+//            
+//            NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
+//                (response: URLResponse!, data: Data!, error: Error!) -> Void in
+//                self.image = UIImage(data: data)
+//            }
+//        }
+//    }
+//}
+
+

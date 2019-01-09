@@ -12,11 +12,14 @@ import Kio
 public final class MainVC: KioViewController {
         
     // MARK: - Initializer
-    public init() {
+    public init(photographs: [Photograph]) {
+        self.photographs = photographs
         super.init(nibName: nil, bundle: nil)
         
-        
-        self.dataSource = MainDataSource(collectionView: self.rootView.collectionView)
+        self.dataSource = MainDataSource(
+            collectionView: self.rootView.collectionView,
+            photographs: photographs
+        )
         
         if let layout = self.rootView.collectionView.collectionViewLayout as? CustomCollectionViewLayout {
             layout.delegate = self
@@ -43,6 +46,7 @@ public final class MainVC: KioViewController {
     
     // MARK: - Stored Properties
     private var dataSource: MainDataSource!
+    private let photographs: [Photograph]
 }
 
 // MARK: - Views
@@ -73,7 +77,11 @@ extension MainVC: CustomCollectionViewLayoutDelegate {
         
         let number = Int.random(in: 200 ... 500)
         
-        return CGFloat(number)
+        let photographHeight: Int = self.photographs[indexPath.row].coverPhoto.height
+        
+        let calculatedHeightValue: Double = 0.07 * Double(photographHeight)
+        
+        return CGFloat(calculatedHeightValue)
     }
 }
 

@@ -208,6 +208,7 @@
 		7C3D4EA621E4EE3100148419 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7C3D4EC421E5BC7800148419 /* Protocols */,
 				7C0383DE21E4E7C00093EE16 /* MainVC.swift */,
 				7C3D4EA721E4EEAE00148419 /* MainCoordinator.swift */,
 				7C3D4EA921E4F15300148419 /* MainView.swift */,
@@ -257,6 +258,13 @@
 				7C3D4EBF21E58F0C00148419 /* Photograph.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7C3D4EC421E5BC7800148419 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +429,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-freeHero/Pods-freeHero-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Kio/Kio.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -431,6 +440,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",

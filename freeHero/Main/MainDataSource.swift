@@ -12,8 +12,9 @@ import Kio
 public final class MainDataSource: KioObject {
     
     // MARK: - Initializer
-    public init(collectionView: UICollectionView) {
+    public init(collectionView: UICollectionView, photographs: [Photograph]) {
         self.collectionView = collectionView
+        self.photographs = photographs
         super.init()
         
         self.collectionView.register(
@@ -26,18 +27,19 @@ public final class MainDataSource: KioObject {
     
     // MARK: - Stored Properties
     private unowned let collectionView: UICollectionView
+    private var photographs: [Photograph]
     
 }
 
 extension MainDataSource: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return self.photographs.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MainCell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCell.identifier, for: indexPath) as! MainCell
         
-        cell.backgroundColor = UIColor.random()
+        cell.configure(with: self.photographs[indexPath.row])
         
         return cell
     }

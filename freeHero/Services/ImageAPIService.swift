@@ -13,28 +13,29 @@ import Result
 public struct ImageAPIService {
     
     // MARK: - Store Properties
-    private let imageProvider: MoyaProvider = MoyaProvider<ImageRequest>()
+    private let photographProvider: MoyaProvider = MoyaProvider<PhotographRequest>()
     
-    public func getImages() {
+    public func getPhotograph(completion: @escaping ([Photograph]) -> Void ) {
         
-        self.imageProvider.request(ImageRequest.getImages) { (result: Result<Response, MoyaError>) -> Void in
+        self.photographProvider.request(PhotographRequest.getImages) { (result: Result<Response, MoyaError>) -> Void in
+            
             switch result {
             case .success(let response):
                 
                 guard
-                    let photographs: [Photograph] = try? JSONDecoder().decode([Photograph].self, from: response.data)
+                    let photographs: [Photograph] = try? JSONDecoder().decode(
+                        [Photograph].self,
+                        from: response.data
+                    )
+                    
                 else { return }
                 
-                for photograph in photographs {
-                    print("title: \(photograph.title)")
-                }
+                completion(photographs)
                 
             case .failure(let error):
                 print(error)
             }
         }
-        
-        
     }
     
 }

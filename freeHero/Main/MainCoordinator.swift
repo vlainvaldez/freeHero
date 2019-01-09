@@ -13,23 +13,22 @@ public final class MainCoordinator: AbstractCoordinator {
     
     
     // MARK: - Initializer
-    public init(navigationController: UINavigationController) {
+    public init(navigationController: UINavigationController, photographs: [Photograph]) {
         self.navigationController = navigationController
+        self.photographs = photographs
         super.init()
         
     }
     
     // MARK: - Stored Properties
     private let navigationController: UINavigationController
-    private let imageAPIService: ImageAPIService = ImageAPIService()
+    private let photographs: [Photograph]
     
     
     // MARK: - Instance Methods
     public override func start() {
         
-        self.imageAPIService.getImages()        
-        
-        let vc: MainVC = MainVC()
+        let vc: MainVC = MainVC(photographs: photographs)
         self.navigationController.setViewControllers([vc], animated: true)
     }
     

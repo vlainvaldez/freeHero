@@ -22,17 +22,23 @@ public final class FreeHeroAppCoordinator: AppCoordinator<UINavigationController
     }
     
     // MARK: Stored Properties
+    private let imageAPIService: ImageAPIService = ImageAPIService()
     
     // MARK: Instance Methods
-    
     public override func start() {
-        let coordinator: MainCoordinator = MainCoordinator(
-            navigationController: self.rootViewController
-        )
         
-        coordinator.start()
-        self.add(childCoordinator: coordinator)
+        self.imageAPIService.getPhotograph { (photographs: [Photograph]) -> Void in
+            let coordinator: MainCoordinator = MainCoordinator(
+                navigationController: self.rootViewController,
+                photographs: photographs
+            )
+            
+            coordinator.start()
+            self.add(childCoordinator: coordinator)
+        }
     }
+    
+    
 }
 
 

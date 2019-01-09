@@ -9,7 +9,9 @@ target 'freeHero' do
   pod 'SnapKit', '~> 4.0.0'
   pod 'Kio', :git => 'https://github.com/hooliooo/Kio.git'
   pod 'Moya', '~> 12.0'
-
+  # pod 'AlamofireImage'
+  pod 'Kingfisher'
+  
   target 'freeHeroTests' do
     inherit! :search_paths
     # Pods for testing

@@ -9,12 +9,12 @@
 import Foundation
 import Moya
 
-public enum ImageRequest {
+public enum PhotographRequest {
     case getImages
 }
 
 
-extension ImageRequest: TargetType {
+extension PhotographRequest: TargetType {
     public var baseURL: URL {
         return URL(string: "https://api.unsplash.com/")!
     }
