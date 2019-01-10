@@ -29,7 +29,8 @@ public final class MainView: KioView {
         layout.minimumInteritemSpacing = 10.0
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         let view: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "repeatingBackground")!)
+//        view.backgroundColor = UIColor(patternImage: UIImage(named: "repeatingBackground")!)
+        view.backgroundColor = AppUI.Color.dark
         return view
     }()
     

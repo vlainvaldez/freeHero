@@ -12,8 +12,9 @@ import Kio
 public final class DetailVC: KioViewController {
     
     // MARK: - Initializer
-    public init(photograph: Photograph) {
+    public init(photograph: Photograph, details: Detail) {
         self.photograph = photograph
+        self.details = details
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,11 +31,15 @@ public final class DetailVC: KioViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.rootView.configure(with: self.photograph)
+        self.rootView.configure(photograph: self.photograph, detail: self.details)
+
     }
+
+
     
     // MARK: - Stored Properties
     private let photograph: Photograph
+    private let details: Detail
 }
 
 // MARK: - Views

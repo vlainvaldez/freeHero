@@ -29,8 +29,7 @@ public final class MainDataSource: KioObject {
     // MARK: - Stored Properties
     public unowned let collectionView: UICollectionView
     public var photographs: [Photograph]
-    private var numberOfCells: Int
-    private let imageAPIService: ImageAPIService = ImageAPIService()
+    private var numberOfCells: Int    
     private var page: Int = 1
     
 //    private var loadingStatus = LoadMoreStatus.haveMore

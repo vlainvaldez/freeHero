@@ -46,7 +46,16 @@ public final class MainVC: KioViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        self.title = "FreeHero "
+
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: " Back",
+            style: UIBarButtonItem.Style.plain,
+            target: nil,
+            action: nil
+        )
+
     }
     
     // MARK: - Stored Properties
@@ -132,10 +141,7 @@ extension MainVC {
 // MARK: - UICollectionViewDelegate Functions
 extension MainVC: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        guard let delegate = self.delegate else { return }
-        
-        delegate.imageTapped(with: self.photographs[indexPath.row])
+        self.cellTapped(with: self.photographs[indexPath.item])
     }
     
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -204,4 +210,30 @@ extension MainVC: UICollectionViewDataSourcePrefetching {
         }
         
     }
+}
+
+// MARK: Helper Functions
+extension MainVC {
+
+    private func cellTapped(with photograph: Photograph) {
+        guard let delegate = self.delegate else { return }
+
+        self.kio.showActivityIndicator()
+        delegate.imageTapped(with: photograph) { [weak self](detail: Detail?) -> Void in
+
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.kio.hideActivityIndicator()
+
+                if let detail = detail {
+                    self.goToDetail(photograph: photograph, detail: detail)
+                }
+            }
+        }
+    }
+
+    private func goToDetail(photograph: Photograph, detail: Detail) {
+        self.delegate?.goToDetail(photograph: photograph, detail: detail)
+    }
+
 }

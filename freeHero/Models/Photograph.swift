@@ -21,6 +21,8 @@ public struct CoverPhoto: Decodable {
     let width: Int
     let height: Int
     let urls: CoverPhotoURLS
+    let likes: Int
+    let id: String
 }
 
 

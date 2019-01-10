@@ -23,7 +23,7 @@ public final class MainCoordinator: AbstractCoordinator {
     // MARK: - Stored Properties
     private let navigationController: UINavigationController
     private let photographs: [Photograph]
-    
+    private let imageAPIService: ImageAPIService = ImageAPIService()
     
     // MARK: - Instance Methods
     public override func start() {
@@ -39,15 +39,23 @@ public final class MainCoordinator: AbstractCoordinator {
 }
 
 extension MainCoordinator: MainVCDelegate {
-    
-    public func imageTapped(with photograph: Photograph) {
+    public func imageTapped(with photograph: Photograph, completion: @escaping (Detail?) -> Void) {
+        self.imageAPIService.getPhotoDetail(id: photograph.coverPhoto.id) { (detail: Detail?) -> Void in
+            completion(detail)
+        }
+    }
+
+    public func goToDetail(photograph: Photograph, detail: Detail) {
+        
         let coordinator: DetailCoordinator = DetailCoordinator(
             navigationController: self.navigationController,
-            photograph: photograph
+            photograph: photograph,
+            details: detail
         )
-        
+
         coordinator.start()
-        self.add(childCoordinator: coordinator)        
+        self.add(childCoordinator: coordinator)
+
     }
 }
 
