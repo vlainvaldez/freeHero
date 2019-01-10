@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		06D157807E2695C5F990FB0D /* Pods_freeHeroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4418AFB9986A71984E175A /* Pods_freeHeroUITests.framework */; };
 		346E41FD2448A60B20B6E068 /* Pods_freeHeroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3A3FEBAE2036CCA93D527D /* Pods_freeHeroTests.framework */; };
+		77892BAE21E74128006A9C15 /* AppUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77892BAD21E74128006A9C15 /* AppUI.swift */; };
+		77892BB021E744FF006A9C15 /* DetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77892BAF21E744FF006A9C15 /* DetailRequest.swift */; };
+		77892BB221E745DC006A9C15 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77892BB121E745DC006A9C15 /* Detail.swift */; };
 		7C0383DD21E4E7C00093EE16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0383DC21E4E7C00093EE16 /* AppDelegate.swift */; };
 		7C0383DF21E4E7C00093EE16 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0383DE21E4E7C00093EE16 /* MainVC.swift */; };
 		7C0383E421E4E7C20093EE16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0383E321E4E7C20093EE16 /* Assets.xcassets */; };
@@ -22,7 +25,7 @@
 		7C3D4EAE21E4F7CA00148419 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EAD21E4F7CA00148419 /* MainCell.swift */; };
 		7C3D4EB221E4FE2B00148419 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB121E4FE2B00148419 /* CustomCollectionViewLayout.swift */; };
 		7C3D4EB421E50AFE00148419 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB321E50AFE00148419 /* extensions.swift */; };
-		7C3D4EB721E57FF000148419 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB621E57FF000148419 /* ImageRequest.swift */; };
+		7C3D4EB721E57FF000148419 /* PhotographRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB621E57FF000148419 /* PhotographRequest.swift */; };
 		7C3D4EB921E5849000148419 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB821E5849000148419 /* PrivateConstants.swift */; };
 		7C3D4EBC21E5893800148419 /* ImageAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EBB21E5893800148419 /* ImageAPIService.swift */; };
 		7C3D4EC021E58F0C00148419 /* Photograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EBF21E58F0C00148419 /* Photograph.swift */; };
@@ -59,6 +62,9 @@
 		68246113170E9FAD844DD5F6 /* Pods-freeHero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHero.release.xcconfig"; path = "Pods/Target Support Files/Pods-freeHero/Pods-freeHero.release.xcconfig"; sourceTree = "<group>"; };
 		6CF1B13DF1256E06274DE2FE /* Pods-freeHeroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-freeHeroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-freeHeroUITests/Pods-freeHeroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6F4418AFB9986A71984E175A /* Pods_freeHeroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_freeHeroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77892BAD21E74128006A9C15 /* AppUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUI.swift; sourceTree = "<group>"; };
+		77892BAF21E744FF006A9C15 /* DetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRequest.swift; sourceTree = "<group>"; };
+		77892BB121E745DC006A9C15 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		7C0383D921E4E7C00093EE16 /* freeHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freeHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0383DC21E4E7C00093EE16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C0383DE21E4E7C00093EE16 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -78,7 +84,7 @@
 		7C3D4EAD21E4F7CA00148419 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		7C3D4EB121E4FE2B00148419 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
 		7C3D4EB321E50AFE00148419 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
-		7C3D4EB621E57FF000148419 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		7C3D4EB621E57FF000148419 /* PhotographRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotographRequest.swift; sourceTree = "<group>"; };
 		7C3D4EB821E5849000148419 /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		7C3D4EBB21E5893800148419 /* ImageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIService.swift; sourceTree = "<group>"; };
 		7C3D4EBF21E58F0C00148419 /* Photograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photograph.swift; sourceTree = "<group>"; };
@@ -140,6 +146,14 @@
 				6F4418AFB9986A71984E175A /* Pods_freeHeroUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77892BAC21E740A9006A9C15 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				77892BAD21E74128006A9C15 /* AppUI.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		7C0383D021E4E7C00093EE16 = {
@@ -232,6 +246,7 @@
 		7C3D4EAF21E4FE0500148419 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				77892BAC21E740A9006A9C15 /* Enums */,
 				7C3D4ED421E640D900148419 /* Classes */,
 				7C3D4EB021E4FE1100148419 /* Views */,
 				7C3D4EB321E50AFE00148419 /* extensions.swift */,
@@ -259,7 +274,8 @@
 		7C3D4EBA21E5879500148419 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				7C3D4EB621E57FF000148419 /* ImageRequest.swift */,
+				7C3D4EB621E57FF000148419 /* PhotographRequest.swift */,
+				77892BAF21E744FF006A9C15 /* DetailRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -268,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				7C3D4EBF21E58F0C00148419 /* Photograph.swift */,
+				77892BB121E745DC006A9C15 /* Detail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -458,7 +475,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-freeHero/Pods-freeHero-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-freeHero/Pods-freeHero-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Kio/Kio.framework",
@@ -479,7 +496,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-freeHero/Pods-freeHero-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-freeHero/Pods-freeHero-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		64CA4915E4F1C836BA545534 /* [CP] Check Pods Manifest.lock */ = {
@@ -539,15 +556,18 @@
 				7C3D4ED321E5E0D400148419 /* MainVCDelegate.swift in Sources */,
 				7C3D4ECF21E5DDDD00148419 /* DetailCoordinator.swift in Sources */,
 				7C0383DD21E4E7C00093EE16 /* AppDelegate.swift in Sources */,
+				77892BB021E744FF006A9C15 /* DetailRequest.swift in Sources */,
 				7C3D4EAA21E4F15300148419 /* MainView.swift in Sources */,
+				77892BB221E745DC006A9C15 /* Detail.swift in Sources */,
 				7C3D4EBC21E5893800148419 /* ImageAPIService.swift in Sources */,
 				7C3D4EB421E50AFE00148419 /* extensions.swift in Sources */,
 				7C3D4ED621E640F000148419 /* DataLoadOperation.swift in Sources */,
-				7C3D4EB721E57FF000148419 /* ImageRequest.swift in Sources */,
+				7C3D4EB721E57FF000148419 /* PhotographRequest.swift in Sources */,
 				7C3D4ED121E5DDE800148419 /* DetailView.swift in Sources */,
 				7C3D4EB921E5849000148419 /* PrivateConstants.swift in Sources */,
 				7C3D4EA521E4EC1700148419 /* FreeHeroAppCoordinator.swift in Sources */,
 				7C3D4EC021E58F0C00148419 /* Photograph.swift in Sources */,
+				77892BAE21E74128006A9C15 /* AppUI.swift in Sources */,
 				7C3D4EB221E4FE2B00148419 /* CustomCollectionViewLayout.swift in Sources */,
 				7C3D4EAC21E4F61500148419 /* MainDataSource.swift in Sources */,
 				7C3D4ECD21E5DC1B00148419 /* DetailVC.swift in Sources */,

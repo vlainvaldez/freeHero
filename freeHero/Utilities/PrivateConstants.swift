@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+let UnplashAccessToken: String = "91066c7f2117326d083608d1d7596d8355dbd0de4a9a3dd07d99fde8dc63361f"

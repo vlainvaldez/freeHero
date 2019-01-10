@@ -1,5 +1,5 @@
 //
-//  ImageRequest.swift
+//  PhotographRequest.swift
 //  freeHero
 //
 //  Created by alvin joseph valdez on 09/01/2019.
