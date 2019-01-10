@@ -40,7 +40,7 @@ public struct ImageAPIService {
         }
     }
 
-    public func getPhotoDetail(id: String, completion: @escaping (Detail) -> Void ) {
+    public func getPhotoDetail(id: String, completion: @escaping (Detail?) -> Void ) {
         self.detailProvider.request(DetailRequest.getDetail(id: id) ) { (result: Result<Response, MoyaError>) -> Void in
 
             switch result {
@@ -58,6 +58,7 @@ public struct ImageAPIService {
 
             case .failure(let error):
                 print(error)
+                completion(nil)
             }
         }
     }

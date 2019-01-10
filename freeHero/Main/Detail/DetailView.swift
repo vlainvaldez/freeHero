@@ -15,7 +15,7 @@ public final class DetailView: KioView {
     // MARK: - Subviews
     private let bannerView: UIView = {
         let view: UIView = UIView()
-        view.backgroundColor = AppUI.Color.crimson
+        view.backgroundColor = UIColor.white
         return view
     }()
 
@@ -149,11 +149,12 @@ public final class DetailView: KioView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.backgroundColor = AppUI.Color.dracula
+        self.backgroundColor = AppUI.Color.dark
 
         self.kio.subviews(forAutoLayout: [
                 self.bannerView, self.titleLabel,
-                self.sizeLabel, self.stackHorizontalView
+                self.sizeLabel, self.stackHorizontalView,
+                self.descriptionTextView
             ]
         )
 
@@ -200,15 +201,16 @@ public final class DetailView: KioView {
         }
 
         self.imageBanner.snp.remakeConstraints { (make: ConstraintMaker) -> Void in
-            make.edges.equalToSuperview()
+            make.top.equalToSuperview().offset(10.0)
+            make.leading.trailing.bottom.equalToSuperview()
         }
 
-        //        self.descriptionTextView.snp.remakeConstraints { [unowned self] (make: ConstraintMaker) -> Void in
-        //            make.top.equalTo(self.bannerView.snp.bottom).offset(20.0)
-        //            make.leading.equalToSuperview().offset(20.0)
-        //            make.trailing.equalToSuperview().inset(20.0)
-        //            make.height.equalTo(200.0)
-        //        }
+        self.descriptionTextView.snp.remakeConstraints { [unowned self] (make: ConstraintMaker) -> Void in
+            make.top.equalTo(self.stackHorizontalView.snp.bottom).offset(20.0)
+            make.leading.equalToSuperview().offset(20.0)
+            make.trailing.equalToSuperview().inset(20.0)
+            make.height.equalTo(200.0)
+        }
     }
 
     public func configure(photograph: Photograph, detail: Detail) {
@@ -217,7 +219,6 @@ public final class DetailView: KioView {
         guard
             let thumbNailURL: URL = URL(string: imageString)
             else { return }
-
 
         self.imageBanner.kf.indicatorType = .activity
         self.imageBanner.kf.setImage(
@@ -232,7 +233,6 @@ public final class DetailView: KioView {
             result in
             switch result {
             case .success(let value):
-
                 print("Task done for: \(value.source.url?.absoluteString ?? "")")
             case .failure(let error):
                 print("Job failed: \(error.localizedDescription)")
@@ -248,5 +248,4 @@ public final class DetailView: KioView {
         self.downloadsValueLabel.text = "\(detail.downloads)"
         self.likesValueLabel.text = "\(photograph.coverPhoto.likes)"
     }
-
 }

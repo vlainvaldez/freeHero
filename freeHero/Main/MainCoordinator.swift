@@ -39,21 +39,23 @@ public final class MainCoordinator: AbstractCoordinator {
 }
 
 extension MainCoordinator: MainVCDelegate {
-    
-    public func imageTapped(with photograph: Photograph) {
-
-        self.imageAPIService.getPhotoDetail(id: photograph.coverPhoto.id) { (detail: Detail) -> Void in
-
-            let coordinator: DetailCoordinator = DetailCoordinator(
-                navigationController: self.navigationController,
-                photograph: photograph,
-                details: detail
-            )
-
-            coordinator.start()
-            self.add(childCoordinator: coordinator)
-
+    public func imageTapped(with photograph: Photograph, completion: @escaping (Detail?) -> Void) {
+        self.imageAPIService.getPhotoDetail(id: photograph.coverPhoto.id) { (detail: Detail?) -> Void in
+            completion(detail)
         }
+    }
+
+    public func goToDetail(photograph: Photograph, detail: Detail) {
+        
+        let coordinator: DetailCoordinator = DetailCoordinator(
+            navigationController: self.navigationController,
+            photograph: photograph,
+            details: detail
+        )
+
+        coordinator.start()
+        self.add(childCoordinator: coordinator)
+
     }
 }
 

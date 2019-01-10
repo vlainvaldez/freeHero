@@ -10,6 +10,8 @@ import Foundation
 
 public protocol MainVCDelegate: class {
     
-    func imageTapped(with photograph: Photograph)
+    func imageTapped(with photograph: Photograph, completion: @escaping (Detail?) -> Void)
+
+    func goToDetail(photograph: Photograph, detail: Detail)
     
 }

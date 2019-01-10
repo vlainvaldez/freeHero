@@ -32,7 +32,10 @@ public final class DetailVC: KioViewController {
         super.viewDidLoad()
         
         self.rootView.configure(photograph: self.photograph, detail: self.details)
+
     }
+
+
     
     // MARK: - Stored Properties
     private let photograph: Photograph

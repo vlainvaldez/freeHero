@@ -24,34 +24,34 @@ extension UIColor {
     }
 }
 
-let imageCache = NSCache<AnyObject, AnyObject>()
+extension UIImage {
+    public var normalized: UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        self.draw(in: rect)
 
-//extension UIImageView {
-//    
-//    func loadeImagefrom(url: URL) {
-//        
-//        image = nil
-//        
-//        if let imageFromCache = imageCache.object(forKey: url as AnyObject) as? UIImage {
-//            self.image = imageFromCache
-//            return
-//        }
-//        
-//        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//                return
-//            }
-//            
-//            DispatchQueue.main.async {
-//                let cacheImage = UIImage(data: data!)
-//                
-//                imageCache.setObject(cacheImage!, forKey: url as AnyObject)
-//                self.image = cacheImage
-//            }
-//        }.resume()
-//        
-//    }
-//    
-//}
+        let normalizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
 
+        let newWidth = CGFloat(300)
+        let scale = newWidth / normalizedImage.size.width
+        let newHeight = normalizedImage.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        normalizedImage.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+    }
+}
+
+extension UIColor {
+    public static func createGradient(colorTop: UIColor, colorBottom: UIColor) -> CAGradientLayer {
+        var gradientLayer:CAGradientLayer!
+
+        gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1.0]
+        return gradientLayer
+    }
+}

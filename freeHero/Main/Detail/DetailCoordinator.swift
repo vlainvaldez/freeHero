@@ -30,6 +30,7 @@ public final class DetailCoordinator: AbstractCoordinator {
     public override func start() {
         super.start()
         let vc: DetailVC = DetailVC(photograph: self.photograph, details: self.details)
+
         self.navigationController.pushViewController(vc, animated: true)
     }
     
