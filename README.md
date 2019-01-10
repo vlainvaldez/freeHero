@@ -1,6 +1,6 @@
 # Demo iOS App Using Unplash API
 
-This is a demo app using unplash api [Unplash](https://unsplash.com).
+This is a demo app using [Unplash](https://unsplash.com) API.
 
 This is a simple app that only fetch the images from the API and display the list and the details
 using collectionView
