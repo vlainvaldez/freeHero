@@ -23,7 +23,6 @@
 		7C3D4EB221E4FE2B00148419 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB121E4FE2B00148419 /* CustomCollectionViewLayout.swift */; };
 		7C3D4EB421E50AFE00148419 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB321E50AFE00148419 /* extensions.swift */; };
 		7C3D4EB721E57FF000148419 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB621E57FF000148419 /* ImageRequest.swift */; };
-		7C3D4EB921E5849000148419 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EB821E5849000148419 /* PrivateConstants.swift */; };
 		7C3D4EBC21E5893800148419 /* ImageAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EBB21E5893800148419 /* ImageAPIService.swift */; };
 		7C3D4EC021E58F0C00148419 /* Photograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4EBF21E58F0C00148419 /* Photograph.swift */; };
 		7C3D4ECD21E5DC1B00148419 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D4ECC21E5DC1B00148419 /* DetailVC.swift */; };
@@ -79,7 +78,6 @@
 		7C3D4EB121E4FE2B00148419 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
 		7C3D4EB321E50AFE00148419 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		7C3D4EB621E57FF000148419 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
-		7C3D4EB821E5849000148419 /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		7C3D4EBB21E5893800148419 /* ImageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIService.swift; sourceTree = "<group>"; };
 		7C3D4EBF21E58F0C00148419 /* Photograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photograph.swift; sourceTree = "<group>"; };
 		7C3D4ECC21E5DC1B00148419 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 				7C3D4ED421E640D900148419 /* Classes */,
 				7C3D4EB021E4FE1100148419 /* Views */,
 				7C3D4EB321E50AFE00148419 /* extensions.swift */,
-				7C3D4EB821E5849000148419 /* PrivateConstants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -545,7 +542,6 @@
 				7C3D4ED621E640F000148419 /* DataLoadOperation.swift in Sources */,
 				7C3D4EB721E57FF000148419 /* ImageRequest.swift in Sources */,
 				7C3D4ED121E5DDE800148419 /* DetailView.swift in Sources */,
-				7C3D4EB921E5849000148419 /* PrivateConstants.swift in Sources */,
 				7C3D4EA521E4EC1700148419 /* FreeHeroAppCoordinator.swift in Sources */,
 				7C3D4EC021E58F0C00148419 /* Photograph.swift in Sources */,
 				7C3D4EB221E4FE2B00148419 /* CustomCollectionViewLayout.swift in Sources */,
