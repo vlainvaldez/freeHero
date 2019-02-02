@@ -40,6 +40,8 @@ public final class DetailVC: KioViewController {
     // MARK: - Stored Properties
     private let photograph: Photograph
     private let details: Detail
+    
+    
 }
 
 // MARK: - Views

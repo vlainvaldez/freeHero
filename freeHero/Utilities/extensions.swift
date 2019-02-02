@@ -25,23 +25,18 @@ extension UIColor {
 }
 
 extension UIImage {
-    public var normalized: UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
-        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
-        self.draw(in: rect)
-
-        let normalizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+    func scaleUIImageToSize(image: UIImage, size: CGSize) -> UIImage {
+        let hasAlpha = false
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+        
+        image.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
-        let newWidth = CGFloat(300)
-        let scale = newWidth / normalizedImage.size.width
-        let newHeight = normalizedImage.size.height * scale
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        normalizedImage.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage!
+        
+        return scaledImage!
     }
 }
 

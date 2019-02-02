@@ -9,13 +9,14 @@
 import UIKit
 import Kio
 import SnapKit
+import Kingfisher
 
 public final class DetailView: KioView {
 
     // MARK: - Subviews
     private let bannerView: UIView = {
         let view: UIView = UIView()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.clear
         return view
     }()
 
@@ -130,7 +131,7 @@ public final class DetailView: KioView {
         let view: UIImageView = UIImageView()
         view.image = UIImage(named: "repeatingBackground")
         view.clipsToBounds = true
-        view.contentMode = UIImageView.ContentMode.scaleAspectFit
+        view.contentMode = UIImageView.ContentMode.scaleAspectFill
         return view
     }()
 
@@ -143,7 +144,9 @@ public final class DetailView: KioView {
         view.textColor = UIColor.white
         return view
     }()
-
+    
+    // MARK: Stored Properties
+    private var detailImage: UIImage?
 
     // MARK: - Initializer
     public override init(frame: CGRect) {
@@ -184,7 +187,9 @@ public final class DetailView: KioView {
     // MARK: Instance Methods
     public override func layoutSubviews() {
         super.layoutSubviews()
-
+        
+        self.layoutIfNeeded()
+        
         self.bannerView.snp.remakeConstraints { [unowned self] (make: ConstraintMaker) -> Void in
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo((self.frame.height / 2) - 30)
@@ -211,6 +216,19 @@ public final class DetailView: KioView {
             make.trailing.equalToSuperview().inset(20.0)
             make.height.equalTo(200.0)
         }
+        
+        
+        if let image = self.detailImage  {
+            
+            let width: CGFloat = self.imageBanner.frame.width + 50
+            let height: CGFloat = self.imageBanner.frame.height
+            
+            let size: CGSize = CGSize(width: width, height: height)
+            
+            let newDetailImage: UIImage = self.scaleUIImageToSize(image: image, size: size)
+            
+            self.imageBanner.image = newDetailImage
+        }
     }
 
     public func configure(photograph: Photograph, detail: Detail) {
@@ -234,6 +252,9 @@ public final class DetailView: KioView {
             switch result {
             case .success(let value):
                 print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                
+                self.detailImage = value.image
+                
             case .failure(let error):
                 print("Job failed: \(error.localizedDescription)")
             }
@@ -247,5 +268,23 @@ public final class DetailView: KioView {
         self.viewsValueLabel.text = "\(detail.views)"
         self.downloadsValueLabel.text = "\(detail.downloads)"
         self.likesValueLabel.text = "\(photograph.coverPhoto.likes)"
+    }
+    
+    
+}
+
+extension DetailView {
+    func scaleUIImageToSize(image: UIImage, size: CGSize) -> UIImage {
+        let hasAlpha = false
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+        
+        image.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return scaledImage!
     }
 }
