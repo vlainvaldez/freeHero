@@ -58,25 +58,15 @@ extension MainCell {
         
         
 //        self.imageView.loadeImagefrom(url: thumbNailURL)
-        
-        
+
         self.imageView.kf.indicatorType = .activity
-        self.imageView.kf.setImage(
-            with: thumbNailURL,
-            placeholder: UIImage(named: "Placeholder"),
-            options: [
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(2)),
-                .cacheOriginalImage
-            ])
-        {
-            result in
-            switch result {
-            case .success(let value):
-                print("Task done for: \(value.source.url?.absoluteString ?? "")")
-            case .failure(let error):
-                print("Job failed: \(error.localizedDescription)")
+        self.imageView.kf.setImage(with: thumbNailURL, placeholder: UIImage(named: "Placeholder"), options: [.scaleFactor(UIScreen.main.scale),
+        .transition(.fade(2)),
+        .cacheOriginalImage]) { (image: Image?, error: Error?, _, _) in
+            if let image = image {
+                print("Task done for: ")
             }
         }
+        
     }
 }

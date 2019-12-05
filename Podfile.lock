@@ -1,23 +1,23 @@
 PODS:
-  - Alamofire (4.8.0)
-  - Kingfisher (5.0.1)
+  - Alamofire (4.9.0)
+  - Kingfisher (4.2.0)
   - Kio (2.1.3)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
-  - Result (4.0.0)
-  - SnapKit (4.0.1)
+    - Result (~> 4.1)
+  - Result (4.1.0)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Kingfisher
   - Kio (from `https://github.com/hooliooo/Kio.git`)
-  - Moya (~> 12.0)
-  - SnapKit (~> 4.0.0)
+  - Moya (~> 13.0)
+  - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - Kingfisher
     - Moya
@@ -34,13 +34,13 @@ CHECKOUT OPTIONS:
     :git: https://github.com/hooliooo/Kio.git
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
-  Kio: 8f638653e9905962d734bb085b6fa92f0f253922
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
-  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
+  Kio: d5f287e41fe177d55a15bfc2ec05ef01c3366fc6
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 64702d47e62a0995e0b902710d0d033cfeeaa202
+PODFILE CHECKSUM: 85df7ad5c20dfd3435504f0a893f42c196884833
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
